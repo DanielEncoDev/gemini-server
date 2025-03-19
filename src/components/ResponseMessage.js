@@ -33,7 +33,7 @@ export default function ResponseMessage({ response }) {
     return (
         <div className="absolute inset-0 flex justify-center items-center">
             <div>
-                <h1 className="text-2xl font-bold">'Estos son los datos que me proporcionaste: '</h1>
+                <h1 className="text-2xl font-bold">Estos son los datos que me proporcionaste: </h1>
                 <hr />
                 <br />
                 <ul>
