@@ -39,6 +39,10 @@ export default function Page() {
           <h2 className="mt-6 text-center text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-red-500">
             Iniciar sesión
           </h2>
+          <p className="text-center text-sm text-gray-500 mt-2">
+            el correo es solo para fines de demostración <br />
+            ejemplo test@test.com contraseña: 123456
+          </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm space-y-4">
