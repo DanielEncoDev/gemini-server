@@ -24,17 +24,18 @@ export default function GeminiPage() {
     }, []);
 
     const handleMessage = async (e) => {
-        setResponse(null);
         e.preventDefault();
-        const response = await fetch(`${url}gemini`, {
+        const description = response?.description ? response.description : '';
+        setResponse(null);
+        const fetchResponse = await fetch(`${url}gemini`, {
             method: 'POST',
-            body: JSON.stringify({ message }),
+            body: JSON.stringify({ message: `${description} ${message}` }),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `${token}`
             },
         });
-        const data = await response.json();
+        const data = await fetchResponse.json();
         setResponse(JSON.parse(data));
         setMessage(''); 
     }

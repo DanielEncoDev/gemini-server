@@ -8,17 +8,15 @@ export default function ResponseMessage({ response }) {
     useEffect(() => {
         const entries = Object.entries(response);
 
+
         if (currentIndex < entries.length) {
         const [clave, valor] = entries[currentIndex];
-        const fullText = `${clave}: ${valor?.toString() || ""}`;
+        const fullText =  `${clave}: ${valor?.toString() || ""}` ;
 
         let charIndex = 0;
         const timer = setInterval(() => {
             if (charIndex < fullText.length) {
             setCurrentText((prev) =>  prev ? prev + fullText[charIndex-1] : fullText.slice(0,1));
-            console.log('fullText',fullText);
-            console.log('fullText[charIndex-1]',fullText[charIndex-1]);
-            console.log('currentText',currentText);
             charIndex++;
             } else {
             clearInterval(timer);
@@ -35,13 +33,13 @@ export default function ResponseMessage({ response }) {
     return (
         <div className="absolute inset-0 flex justify-center items-center">
             <div>
-                <h1 className="text-2xl font-bold">Estos son los datos que me proporcionaste:</h1>
+                <h1 className="text-2xl font-bold">'Estos son los datos que me proporcionaste: '</h1>
                 <hr />
                 <br />
                 <ul>
                     {displayedData.map(([clave, valor]) => (
                     <li key={clave} className="mb-2">
-                        <strong>{clave}:</strong> {valor?.toString() || ""}
+                        <strong>{ clave } </strong> {valor?.toString() || ""}
                     </li>
                     ))}
                     {currentText && (
