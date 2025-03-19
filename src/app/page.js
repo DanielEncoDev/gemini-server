@@ -22,7 +22,6 @@ export default function Page() {
     });
 
     const data = await response.json();
-    console.log({data});
 
     if (data) {
       localStorage.setItem('token', data.token);
